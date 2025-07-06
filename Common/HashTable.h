@@ -61,27 +61,6 @@ subscribers* CreateSubscriber(const char* key, bool isLocationBased) {
 }
 
 
-//subscribers * CreateSubscriber(const char *topic) {
-//
-//	subscribers * novi = (subscribers *)malloc(sizeof(subscribers));
-//	if (novi == NULL) return NULL;
-//
-//	strcpy_s(novi->topic, topic);
-//	novi->acceptedSocketsForTopic = NULL;
-//	return novi;
-//}
-
-//bool AddToTable1(char *topic) {
-//	int index = HashFunction(topic);
-//	subscribers * temp = (subscribers*)malloc(sizeof(subscribers));
-//	if (temp == NULL) return false;
-//
-//	temp->next = tabela[index];
-//	temp->acceptedSocketsForTopic = NULL;
-//	tabela[index] = temp;
-//	return true;
-//}
-
 void printTable(subscribers**tabela) {
 	printf("**** POCETAK ISPISA TABELE *****\n");
 	for (int i = 0; i < table_size; i++) {

@@ -56,7 +56,7 @@ void RunSmallTest() {
     memset(&article, 0, sizeof(ARTICLE));
 
     printf("Pokrecem mali test (10 poruka)...\n");
-    for (int i = 1; i <= 10; i++) {
+    for (int i = 1; i <= 50; i++) {
         article.isLocationBased = false;
         strcpy_s(article.topic, "jacina");
         sprintf_s(article.text, "Mala test poruka broj %d", i);
@@ -88,6 +88,8 @@ void RunLargeTest() {
         if (res == -1) break;
         if (i % 1000 == 0) printf("Poslato %d poruka...\n", i);
     }
+    WSACleanup();
+
     printf("Veliki test zavrsen.\n");
 }
 
@@ -108,6 +110,7 @@ int __cdecl main(int argc, char** argv) {
 
         if (izborTesta == 1) {
             RunSmallTest();
+
         }
         else if (izborTesta == 2) {
             RunLargeTest();
